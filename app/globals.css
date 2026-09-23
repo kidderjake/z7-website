@@ -9,14 +9,17 @@
 /* A striped seven ties the graphic to the name, without a rendering dependency. */
 .hero-art>.seven{background:repeating-linear-gradient(0deg,var(--ink) 0 18px,transparent 18px 24px);clip-path:polygon(0 0,100% 0,100% 20%,47% 100%,15% 100%,69% 23%,0 23%);transform:rotate(-10deg);width:69%;height:67%}.hero-art>.seven i,.hero-art>.seven:before{display:none}
 
-/* Interim text-led hero while the brand identity is reworked. */
+/* A people-led illustration connects the offer to the teams it serves. */
 .site-header{justify-content:flex-end}
-.hero.hero--text{display:block;min-height:0}
-.hero--text .hero-copy{padding:48px 0 46px;display:block}
-.hero--text h1{font-size:clamp(64px,8.5vw,136px);margin:42px 0;max-width:12ch;line-height:.98}
+.hero.hero--text{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(380px,.95fr);gap:clamp(28px,4vw,72px);min-height:650px;align-items:stretch}
+.hero--text .hero-copy{padding:48px 0 46px;display:flex}
+.hero--text h1{font-size:clamp(64px,7.2vw,116px);margin:42px 0;max-width:9ch;line-height:.98}
 .hero--text .hero-bottom{border-top:1px solid var(--line);padding-top:24px;max-width:none}
 .hero--text .hero-bottom p{font-size:16px}
-@media(max-width:650px){.hero--text .hero-copy{padding:32px 0}.hero--text h1{font-size:clamp(52px,12.5vw,80px);margin:36px 0}.hero--text .hero-bottom p{font-size:13px}.hero--text .hero-bottom{padding-top:20px}}
+.hero-people{margin:28px 0;min-width:0;background:var(--blue);display:flex;justify-content:center;overflow:hidden;position:relative}
+.hero-people img{display:block;width:100%;height:auto;max-height:590px;object-fit:contain;padding:26px}
+@media(max-width:1000px){.hero.hero--text{grid-template-columns:minmax(0,1fr) minmax(320px,.8fr);gap:28px;min-height:560px}.hero--text h1{font-size:clamp(56px,7.4vw,80px)}.hero-people img{padding-left:10px;padding-right:10px}}
+@media(max-width:760px){.hero.hero--text{grid-template-columns:1fr;gap:0}.hero-people{height:auto;min-height:390px;margin:0 0 28px}.hero-people img{max-height:500px}.hero--text .hero-copy{padding:32px 0}.hero--text h1{font-size:clamp(52px,12.5vw,80px);margin:36px 0;max-width:none}.hero--text .hero-bottom p{font-size:13px}.hero--text .hero-bottom{padding-top:20px}}
 
 /* Inline examples open below AI & automation. */
 .examples-toggle{background:transparent;color:var(--ink);font:inherit;font-size:27px;padding:0;cursor:pointer}

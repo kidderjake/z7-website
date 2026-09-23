@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 760" role="img" aria-labelledby="title description">
+  <title id="title">Connected people</title>
+  <desc id="description">Three understated geometric human figures linked by a network.</desc>
+
+  <g fill="none" stroke="#14213a" stroke-width="5">
+    <path d="M129 174v-44h44M587 130h44v44M129 586v44h44M587 630h44v-44"/>
+    <path d="M219 283 380 198l161 85M219 283l161 126 161-126" stroke-linecap="round"/>
+  </g>
+
+  <circle cx="380" cy="198" r="13" fill="#2458ca"/>
+  <circle cx="219" cy="283" r="10" fill="#14213a"/>
+  <circle cx="541" cy="283" r="10" fill="#14213a"/>
+  <circle cx="380" cy="409" r="10" fill="#2458ca"/>
+
+  <g fill="#14213a">
+    <circle cx="224" cy="397" r="47"/>
+    <path d="M131 575V493c0-43 35-78 78-78h30c43 0 78 35 78 78v82h-53v-78h-20v78h-40v-78h-20v78z"/>
+  </g>
+
+  <g fill="#14213a">
+    <circle cx="536" cy="397" r="47"/>
+    <path d="M443 575V493c0-43 35-78 78-78h30c43 0 78 35 78 78v82h-53v-78h-20v78h-40v-78h-20v78z"/>
+  </g>
+
+  <g>
+    <circle cx="380" cy="433" r="55" fill="#2458ca" stroke="#b5cae6" stroke-width="11"/>
+    <path d="M274 631V532c0-49 40-89 89-89h34c49 0 89 40 89 89v99h-61v-93h-23v93h-44v-93h-23v93z" fill="#2458ca" stroke="#b5cae6" stroke-width="11" stroke-linejoin="round"/>
+  </g>
+
+  <g fill="#14213a">
+    <circle cx="158" cy="252" r="7"/>
+    <circle cx="602" cy="252" r="7"/>
+    <circle cx="380" cy="123" r="7"/>
+  </g>
+  <g fill="#2458ca">
+    <rect x="145" y="310" width="14" height="14" transform="rotate(45 152 317)"/>
+    <rect x="601" y="310" width="14" height="14" transform="rotate(45 608 317)"/>
+  </g>
+</svg>
