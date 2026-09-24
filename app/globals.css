@@ -52,3 +52,6 @@
 .example-icon--strategy{width:36px;height:36px;border-radius:50%}.example-icon--strategy i:first-child{position:absolute;inset:7px;border:1px solid var(--ink);border-radius:50%}.example-icon--strategy i:nth-child(2){position:absolute;inset:13px;background:var(--accent);border-radius:50%}.example-icon--strategy i:nth-child(3){position:absolute;width:21px;right:-4px;top:6px;border-top:2px solid var(--ink);transform:rotate(-40deg)}.example-icon--content i:first-child{position:absolute;left:5px;right:5px;top:7px;height:7px;background:var(--blue);border:1px solid var(--ink)}.example-icon--content i:nth-child(2){position:absolute;left:5px;right:5px;top:20px;border-top:1px solid var(--ink)}.example-icon--content i:nth-child(3){position:absolute;left:5px;right:10px;top:26px;border-top:1px solid var(--ink)}
 
 @media(max-width:650px){.brand-symbol{width:48px;height:48px;border-radius:11px}}
+
+/* Match the wordmark to the approved logo navy. */
+.brand-wordmark{color:#16284c}
