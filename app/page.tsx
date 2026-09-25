@@ -13,7 +13,7 @@ export default function Home() {
   const [websiteOpen, setWebsiteOpen] = useState(false);
   const [auditOpen, setAuditOpen] = useState(false);
   return <div className="cards-page" id="top">
-    <header className="cards-header"><a href="/" aria-label="Z7 home"><img src="/brand/z7-inline-icon-navy.png" width="54" height="54" alt="Z7"/></a><span className="cards-wordmark">ZONESEVEN</span><a className="enquire-cta" href="/enquire">Enquire <span aria-hidden="true">↗</span></a></header>
+    <header className="cards-header"><a href="/" aria-label="Z7 home"><img src="/brand/z7-inline-icon-navy.png" width="54" height="54" alt="Z7"/></a><span className="cards-wordmark">ZONESEVEN</span><a className="enquire-cta" href="/enquire">Enquire</a></header>
     <main className="cards-stage" aria-label="Z7 product offerings">
       <p className="liftoff-slogan">Time for liftoff</p>
       <section className="offering offering-audit" aria-labelledby="audit-title">
