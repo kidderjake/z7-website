@@ -1,0 +1,32 @@
+/* Website offer: digital studio canvas, distinct from the travel-ticket audit. */
+.bento-page .offering-website{background:oklch(82% .055 232);overflow:hidden}
+.bento-page .website-card{min-height:314px;width:100%;padding:30px;display:grid;grid-template-columns:minmax(0,.9fr) minmax(260px,1.1fr);gap:34px;color:var(--ink);transition:transform 400ms cubic-bezier(.16,1,.3,1)}
+.website-copy{display:flex;flex-direction:column;min-width:0}
+.website-label{display:flex;align-items:center;gap:10px;font-size:9px;letter-spacing:.08em}
+.website-label svg{width:28px;height:28px}
+.website-copy h2{font-size:clamp(30px,3.2vw,46px);line-height:.98;letter-spacing:-.055em;font-weight:500;margin:25px 0 14px}
+.website-copy>p{font-size:13px;line-height:1.55;max-width:36ch;margin:0}
+.website-steps{display:flex;gap:14px;flex-wrap:wrap;margin:24px 0 18px}
+.website-steps span{display:flex;align-items:center;gap:5px;font-size:10px}
+.website-steps b{font-size:8px;font-weight:500;opacity:.55}
+.website-action{margin-top:auto}
+.bento-page .offering-website .start-button{background:var(--ink);color:oklch(97% .008 94);box-shadow:none;height:38px}
+.website-preview{border:1px solid oklch(44% .045 235 / .28);border-radius:10px;background:oklch(96% .012 230);box-shadow:0 18px 35px oklch(40% .05 235 / .18);overflow:hidden;transform:rotate(1.3deg);transition:transform 450ms cubic-bezier(.16,1,.3,1),box-shadow 450ms cubic-bezier(.16,1,.3,1)}
+.preview-bar{height:25px;border-bottom:1px solid oklch(44% .045 235 / .18);display:flex;align-items:center;gap:5px;padding:0 9px}
+.preview-bar i{width:5px;height:5px;border-radius:50%;background:oklch(70% .04 235)}
+.preview-bar span{margin-left:6px;font-size:6px;letter-spacing:.08em}
+.preview-page{height:244px;padding:19px;background:oklch(97% .008 94);position:relative;overflow:hidden}
+.preview-nav{display:flex;align-items:center;gap:8px}
+.preview-nav b{font-size:10px;margin-right:auto}
+.preview-nav span{width:24px;height:2px;background:oklch(72% .02 80)}
+.preview-page>strong{display:block;font-size:31px;line-height:.94;letter-spacing:-.07em;font-weight:500;margin-top:38px}
+.preview-button{width:58px;height:16px;background:var(--yellow);border-radius:20px;margin-top:15px}
+.preview-panels{position:absolute;right:18px;bottom:16px;display:grid;grid-template-columns:1fr 1fr;gap:6px;width:48%}
+.preview-panels i{height:55px;background:oklch(85% .06 230);border-radius:4px}
+.preview-panels i:last-child{background:oklch(87% .16 91)}
+.bento-page .offering-website .offering-details{color:var(--ink);border-color:oklch(50% .04 235 / .25)}
+.bento-page .offering-website .details-note{color:oklch(42% .03 235)}
+@media(hover:hover) and (pointer:fine){.bento-page .offering-website:hover .website-preview{transform:translateY(-5px) rotate(0);box-shadow:0 24px 42px oklch(40% .05 235 / .24)}}
+@media(max-width:950px) and (min-width:701px){.bento-page .website-card{padding:26px 22px;grid-template-columns:1fr 1fr;gap:22px}.website-copy h2{font-size:34px}.website-steps{gap:8px}}
+@media(max-width:700px){.bento-page .website-card{min-height:0;padding:24px;grid-template-columns:1fr;gap:26px}.website-copy h2{font-size:40px}.website-copy>p{max-width:42ch}.website-action{margin-top:2px}.website-preview{transform:none}.preview-page{height:230px}}
+@media(prefers-reduced-motion:reduce){.website-preview{transition:none}.bento-page .offering-website:hover .website-preview{transform:none}}

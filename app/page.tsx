@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import './cards.css';
 import './bento.css';
+import './website-card.css';
 
 function ProductIcon({ automation = false, className = '' }: { automation?: boolean; className?: string }) {
   return <svg className={className} viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -32,17 +33,15 @@ export default function Home() {
         </div>
       </section>
       <section className="offering offering-website" aria-labelledby="website-title">
-        <div className="card-slot"><article className="departure-card">
-          <div className="board-heading"><span className="flight-icon"><ProductIcon/></span><h2 id="website-title">Website</h2></div>
-          <div className="board-labels"><span>STEP</span><span>YOUR WEBSITE</span><span>FOCUS</span></div>
-          <div className="flight-board">
-            <div className="flight-row active"><span>01</span><span>DESIGN</span><span>BRAND</span></div>
-            <div className="flight-row"><span>02</span><span>BUILD</span><span>SPEED</span></div>
-            <div className="flight-row"><span>03</span><span>LAUNCH</span><span>GROWTH</span></div>
+        <div className="card-slot"><article className="website-card">
+          <div className="website-copy">
+            <div className="website-label"><ProductIcon/><span>WEBSITE DESIGN &amp; DEVELOPMENT</span></div>
+            <h2 id="website-title">Your next chapter,<br/>online.</h2>
+            <p>A considered digital presence built around your brand and your business.</p>
+            <div className="website-steps" aria-label="Website process"><span><b>01</b>Strategy</span><span><b>02</b>Design</span><span><b>03</b>Build</span></div>
+            <div className="website-action"><button className="start-button" aria-expanded={websiteOpen} aria-controls="website-details" onClick={() => setWebsiteOpen(!websiteOpen)}>{websiteOpen ? 'LESS DETAIL' : 'EXPLORE WEBSITE'}<span className="expand-symbol" aria-hidden="true">{websiteOpen ? '−' : '+'}</span></button></div>
           </div>
-          <div className="board-footer"><div className="trip"><ProductIcon/><div><span>BUILT AROUND YOU</span><strong>YOUR BUSINESS, ONLINE</strong><small>DESIGNED TO CONNECT</small></div></div>
-            <button className="start-button" aria-expanded={websiteOpen} aria-controls="website-details" onClick={() => setWebsiteOpen(!websiteOpen)}>{websiteOpen ? 'LESS DETAIL' : 'EXPLORE WEBSITE'}<span className="expand-symbol" aria-hidden="true">{websiteOpen ? '−' : '+'}</span></button>
-          </div>
+          <div className="website-preview" aria-hidden="true"><div className="preview-bar"><i/><i/><i/><span>YOURBUSINESS.COM</span></div><div className="preview-page"><div className="preview-nav"><b>Z7</b><span/><span/><span/></div><strong>Made for<br/>what’s next.</strong><div className="preview-button"/><div className="preview-panels"><i/><i/></div></div></div>
         </article></div>
         <div id="website-details" className="offering-details" hidden={!websiteOpen}>
           <h2>A website built around your business.</h2>
