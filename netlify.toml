@@ -15,3 +15,8 @@
   from = "/dashboard"
   to = "/dashboard.html"
   status = 200
+
+[[redirects]]
+  from = "/enquire"
+  to = "/enquire.html"
+  status = 200

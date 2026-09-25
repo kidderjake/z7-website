@@ -1,25 +1,56 @@
 "use client";
-import { useState } from "react";
-import BrandLogo from "./brand-logo";
-const services = [
-{n:"01",name:"AI & automation",line:"Less busywork. More possibility.",description:"Give your team the space to do their best work. Connect your tools, automate repetitive tasks, and turn your data into decisions.",tags:["Connected systems","Less manual work","Clearer decisions"],style:"automation"},
-{n:"02",name:"Website development",line:"Your next chapter, online.",description:"A considered digital presence that works as hard as you do. Custom websites and web applications, built around your brand and your business.",tags:["Custom websites","Web applications","E-commerce","SEO-ready"],style:"web"},
-{n:"03",name:"Marketing & growth",line:"Get seen. Make it count.",description:"Bring clarity to your brand and purpose to every campaign. Strategy, content, and paid marketing that connect you with the right people.",tags:["Positioning","Campaigns","Creative direction"],style:"marketing"}
-];
-const serviceExamples:Record<string,{kind:string;title:string;text:string}[]>={
-"01":[{kind:"dashboard",title:"Dashboard",text:"Bring customer, finance and operations data into one view, tailored to the metrics and actions that matter to your business."},{kind:"report",title:"Reports",text:"Track performance over time, compare periods and schedule clear summaries for your team to review."},{kind:"invoice",title:"Invoice processing",text:"Capture supplier details, check amounts and route approvals before updating your accounting system."}],
-"02":[{kind:"strategy",title:"Site strategy",text:"Map your audience, goals and customer journeys to shape a clear structure and give every page a purpose."},{kind:"dashboard",title:"Design & build",text:"Create a responsive website that reflects your brand, makes navigation intuitive and helps visitors take the next step."},{kind:"content",title:"Launch-ready content",text:"Bring your offer to life through clear copy, purposeful imagery and search-friendly pages, with an easy way to keep them current."}],
-"03":[{kind:"strategy",title:"Brand strategy",text:"Define your positioning, audience and message, then build a practical plan for reaching the right people."},{kind:"content",title:"Content creation",text:"Develop social posts, articles, email copy and campaign assets with a consistent voice and visual direction."},{kind:"report",title:"Campaign planning",text:"Turn ideas into a publishing calendar, choose the right channels and use performance insights to refine what comes next."}]
-};
-export default function Home(){
-const [examplesOpen,setExamplesOpen]=useState<Record<string,boolean>>({});
-const [menu,setMenu]=useState(false),[service,setService]=useState("Not sure yet"),[status,setStatus]=useState("");
-async function copyBrief(e:React.FormEvent<HTMLFormElement>){e.preventDefault();const d=new FormData(e.currentTarget);const brief=`ZoneSeven project enquiry\n\nName: ${d.get("name")}\nEmail: ${d.get("email")}\nInterested in: ${service}\n\n${d.get("message")}`;try{await navigator.clipboard.writeText(brief);setStatus("Your project brief is copied. It has not been sent.")}catch{const u=URL.createObjectURL(new Blob([brief],{type:"text/plain"}));const a=document.createElement("a");a.href=u;a.download="zoneseven-project-brief.txt";a.click();URL.revokeObjectURL(u);setStatus("Your project brief has been downloaded. It has not been sent.")}}
-return <><a className="skip" href="#main">Skip to content</a><header className="site-header"><a className="brand-home" href="/" aria-label="ZoneSeven home"><BrandLogo/></a><button className="menu-toggle" aria-expanded={menu} aria-controls="main-nav" onClick={()=>setMenu(!menu)}>{menu?"Close −":"Menu +"}</button><nav id="main-nav" className={menu?"open":""} aria-label="Main navigation"><a href="#services" onClick={()=>setMenu(false)}>What we do</a><a href="#approach" onClick={()=>setMenu(false)}>Our approach</a><a href="/dashboard">Dashboard showcase</a><a className="nav-cta" href="#contact" onClick={()=>setMenu(false)}>Let’s talk <span aria-hidden="true">↗</span></a></nav></header>
-<main id="main"><section className="hero hero--text" aria-labelledby="hero-title"><div className="hero-copy"><p className="eyebrow"><span className="dot"/> INDEPENDENT THINKING. CONNECTED SOLUTIONS.</p><h1 id="hero-title">Automate.<br/>Amplify.<br/><span>Accelerate.</span></h1><div className="hero-bottom"><p>Connect your tools.<br/>One operational view of your business.</p><a className="round-link" href="#services" aria-label="Explore our services">↓</a></div></div><figure className="hero-people"><img src="/illustrations/connected-people.svg" alt="Three connected geometric human figures"/></figure></section>
-<div className="discipline-strip"><span>Three disciplines. One direction.</span><div><span>AI & automation</span><i>+</i><span>Web development</span><i>+</i><span>Marketing</span></div></div>
-<section className="services section" id="services"><div className="section-heading"><p className="eyebrow">01 / WHAT WE DO</p><div><h2>Good on their own.<br/><span>Better together.</span></h2><p>Connect the way you work, the way you show up,<br className="desktop"/> and the way you grow.</p></div></div><div className="service-list">{services.map(s=><article className="service" key={s.n}><div className="service-title"><span className="index">{s.n}</span><h3>{s.name}</h3><div className={`service-graphic ${s.style}`} aria-hidden="true"><i/><i/><i/><i/></div></div><div className="service-content"><h4>{s.line}</h4><p>{s.description}</p><ul className="tags">{s.tags.map(t=><li key={t}>{t}</li>)}</ul></div><button className="service-link examples-toggle" type="button" aria-expanded={!!examplesOpen[s.n]} aria-controls={`service-examples-${s.n}`} aria-label={`${examplesOpen[s.n]?"Hide":"Show"} ${s.name} examples`} onClick={()=>setExamplesOpen(previous=>({...previous,[s.n]:!previous[s.n]}))}><span aria-hidden="true">{examplesOpen[s.n]?"−":"+"}</span></button><div className="automation-examples" id={`service-examples-${s.n}`} hidden={!examplesOpen[s.n]}><div className="examples-heading"><p className="eyebrow">WHAT THIS LOOKS LIKE IN PRACTICE</p>{s.n==="01"?<a href="/dashboard">Explore the dashboard showcase ↗</a>:<a href="#contact" onClick={()=>{setService(s.name);setStatus("")}}>{s.n==="02"?"Plan your website":"Discuss your next campaign"} ↗</a>}</div><div className="examples-list">{serviceExamples[s.n].map(example=><div className="automation-example" key={example.title}><span className={`example-icon example-icon--${example.kind}`} aria-hidden="true"><i/><i/><i/></span><h5>{example.title}</h5><p>{example.text}</p></div>)}</div></div></article>)}</div></section>
-<section className="approach section" id="approach"><p className="eyebrow">02 / THE ZONESEVEN APPROACH</p><div className="approach-intro"><h2>Not more tools.<br/><span>More advantage.</span></h2><p>Your business doesn’t operate in silos.<br/>Neither should your digital partner.<br/><br/>We bring strategy, design, and technology together to solve the right problems, with a clear path from the first conversation to what comes next.</p></div><div className="principles"><article><span>01 / THINK</span><h3>Start with your business.</h3><p>Understand the friction, find the opportunity, and define what success looks like.</p></article><article><span>02 / BUILD</span><h3>Make the pieces connect.</h3><p>Bring the right tools and disciplines together in a solution shaped around you.</p></article><article><span>03 / EVOLVE</span><h3>Leave room for what’s next.</h3><p>Build with clear milestones, practical handovers, and the flexibility to grow.</p></article></div><div className="approach-foot"><span>AI-FIRST THINKING</span><span>END-TO-END CAPABILITY</span><span>BUILT AROUND YOU</span></div></section>
-<section className="contact section" id="contact"><div className="contact-copy"><p className="eyebrow">03 / YOUR NEXT MOVE</p><h2>Enter<br/>the Zone<span>.</span></h2><p>Something to build? A process to improve?<br/>Let’s start with what’s on your mind.</p><a className="text-link" href="https://zone7.au/#contact" target="_blank" rel="noreferrer">Visit the current ZoneSeven site <span aria-hidden="true">↗</span></a></div><form onSubmit={copyBrief}><fieldset><legend>I’m interested in</legend><div className="service-options">{[...services.map(s=>s.name),"Not sure yet"].map(s=><label className={service===s?"selected":""} key={s}><input type="radio" name="service" value={s} checked={service===s} onChange={()=>{setService(s);setStatus("")}}/>{s}</label>)}</div></fieldset><div className="field-row"><label>Your name<input name="name" placeholder="Alex Smith" autoComplete="name" required maxLength={120} onChange={()=>setStatus("")}/></label><label>Email address<input name="email" type="email" placeholder="alex@business.com" autoComplete="email" required maxLength={254} onChange={()=>setStatus("")}/></label></div><label>What do you have in mind?<textarea name="message" placeholder="A little about your business and what you’d like to change…" required maxLength={5000} rows={3} onChange={()=>setStatus("")}/></label><button className="submit" type="submit">Copy project brief <span aria-hidden="true">↗</span></button><p className="form-note">Design preview: save your brief by copying it. Enquiry delivery will be connected once a contact email is confirmed.</p><p className="form-status" role="status">{status}</p></form></section></main>
-<footer><div className="footer-top"><p>Intelligence built for modern business.</p><a href="#" className="back-top">Back to top ↑</a></div><div className="footer-word" aria-hidden="true">ZONESEVEN<span>↗</span></div><div className="footer-bottom"><span>© {new Date().getFullYear()} ZoneSeven</span><span>AUSTRALIA / EST. 2024</span></div></footer></>;
+
+import { useState } from 'react';
+import './cards.css';
+
+function ProductIcon({ automation = false, className = '' }: { automation?: boolean; className?: string }) {
+  return <svg className={className} viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    {automation ? <><path d="m27 5-17 22h12l-1 16 17-23H26Z"/><path d="M6 12h5M37 37h5"/></> : <><rect x="5" y="8" width="38" height="31" rx="3"/><path d="M5 17h38M11 12h1m5 0h1m-1 12-5 5 5 5m14-10 5 5-5 5m-9 2 4-14"/></>}
+  </svg>;
+}
+
+export default function Home() {
+  const [websiteOpen, setWebsiteOpen] = useState(false);
+  const [auditOpen, setAuditOpen] = useState(false);
+  return <div className="cards-page" id="top">
+    <header className="cards-header"><a href="/" aria-label="Z7 home"><img src="/brand/z7-inline-icon-navy.png" width="54" height="54" alt="Z7"/></a><span className="cards-wordmark">ZONESEVEN</span><a className="enquire-cta" href="/enquire">Enquire <span aria-hidden="true">↗</span></a></header>
+    <main className="cards-stage" aria-label="Z7 product offerings">
+      <p className="liftoff-slogan">Time for liftoff</p>
+      <section className="offering offering-website" aria-labelledby="website-title">
+        <div className="card-slot"><article className="departure-card">
+          <div className="board-heading"><span className="flight-icon"><ProductIcon/></span><h1 id="website-title">Website</h1></div>
+          <div className="board-labels"><span>STEP</span><span>YOUR WEBSITE</span><span>FOCUS</span></div>
+          <div className="flight-board">
+            <div className="flight-row active"><span>01</span><span>DESIGN</span><span>BRAND</span></div>
+            <div className="flight-row"><span>02</span><span>BUILD</span><span>SPEED</span></div>
+            <div className="flight-row"><span>03</span><span>LAUNCH</span><span>GROWTH</span></div>
+          </div>
+          <div className="board-footer"><div className="trip"><ProductIcon/><div><span>BUILT AROUND YOU</span><strong>YOUR BUSINESS, ONLINE</strong><small>DESIGNED TO CONNECT</small></div></div>
+            <button className="start-button" aria-expanded={websiteOpen} aria-controls="website-details" onClick={() => setWebsiteOpen(!websiteOpen)}>{websiteOpen ? 'LESS DETAIL' : 'EXPLORE WEBSITE'}<span className="expand-symbol" aria-hidden="true">{websiteOpen ? '−' : '+'}</span></button>
+          </div>
+        </article></div>
+        <div id="website-details" className="offering-details" hidden={!websiteOpen}>
+          <h2>A website built around your business.</h2>
+          <p>A clear, considered home for your brand that helps people understand what you do and take the next step.</p>
+          <ul><li>Design that reflects your brand</li><li>A responsive experience on mobile and desktop</li><li>Clear navigation and paths to enquiry</li></ul>
+          <p className="details-note">We start with your goals, then shape the pages and features you need.</p>
+        </div>
+      </section>
+      <section className="offering offering-audit" aria-labelledby="audit-title">
+        <div className="card-slot"><article className="ticket">
+          <div className="ticket-upper"><h2 id="audit-title"><span>FREE</span>AI AUTOMATION<br/>AUDIT</h2><p>FOR SMALL BUSINESSES<br/>WITH TOO MUCH BUSYWORK</p><ProductIcon automation className="ticket-plane"/></div>
+          <div className="ticket-lower"><p>FIND THE REPETITIVE WORK.<br/>SEE WHAT AI COULD TAKE OFF YOUR PLATE.</p><div className="barcode" aria-hidden="true"/>
+            <button className="continue-button" aria-expanded={auditOpen} aria-controls="audit-details" onClick={() => setAuditOpen(!auditOpen)}>{auditOpen ? 'LESS DETAIL' : 'EXPLORE FREE AUDIT'}<span className="expand-symbol" aria-hidden="true">{auditOpen ? '−' : '+'}</span></button>
+          </div>
+        </article></div>
+        <div id="audit-details" className="offering-details" hidden={!auditOpen}>
+          <h2>Less busywork.<br/>More time for business.</h2>
+          <p>A free look at how your small business works and where AI automation could help.</p>
+          <ul><li>Review repetitive tasks and everyday tools</li><li>Identify practical automation opportunities</li><li>Get clear recommendations on where to start</li></ul>
+          <p className="details-note">Free audit. No obligation.</p>
+        </div>
+      </section>
+    </main>
+    <footer className="cards-footer"><span>© {new Date().getFullYear()} ZoneSeven</span><a href="#top">Back to top <span aria-hidden="true">↑</span></a></footer>
+  </div>;
 }
