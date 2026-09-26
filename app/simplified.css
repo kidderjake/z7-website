@@ -1,0 +1,18 @@
+.bento-page .cards-stage{max-width:1120px;gap:18px;padding-bottom:72px}
+.bento-intro{padding-bottom:30px}
+.bento-intro h1{margin-bottom:12px}
+.bento-intro>p:last-child{font-size:15px}
+.bento-page .offering-audit{grid-row:span 2}
+.bento-page .ticket{min-height:548px}
+.bento-page .ticket-upper{padding-top:38px}
+.bento-page .ticket-plane{margin-top:56px}
+.bento-page .ticket-lower{border-top:0;margin-top:auto}
+.bento-page .ticket-lower p{font-size:12px;line-height:1.45;max-width:20ch;margin:0 auto 24px}
+.website-copy h2{margin-top:34px}
+.website-copy>p{font-size:14px}
+.website-action{margin-top:auto;padding-top:30px}
+.approach-tile{grid-column:span 8;min-height:216px;justify-content:flex-end;padding:32px;background:oklch(93% .022 89)}
+.approach-tile>span{font-size:9px;letter-spacing:.1em;margin-bottom:auto}
+.approach-tile h2{font-size:clamp(32px,4vw,48px);margin:34px 0 10px;letter-spacing:-.055em}
+.approach-tile p{font-size:14px;margin:0;max-width:38ch}
+@media(max-width:700px){.bento-page .cards-stage{gap:16px}.bento-intro{padding-bottom:18px}.bento-page .ticket{height:400px;min-height:0}.bento-page .ticket-upper{padding-top:24px}.bento-page .ticket-plane{margin-top:0}.bento-page .ticket-lower p{font-size:11px;margin-bottom:18px}.website-copy h2{margin-top:28px}.website-action{padding-top:24px}.approach-tile{grid-column:1/-1;min-height:190px;padding:24px}.approach-tile h2{font-size:36px;margin-top:30px}}
