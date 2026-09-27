@@ -1,0 +1,18 @@
+.bento-page .cards-header{top:24px}
+.bento-page .cards-stage{padding-top:112px}
+.bento-intro{padding-bottom:22px}
+.bento-intro h1{font-size:clamp(42px,5vw,64px)}
+.bento-intro>p:last-child{max-width:44ch;color:oklch(40% .02 80)}
+.bento-page .offering-audit{grid-row:span 2}
+.bento-page .ticket{min-height:580px}
+.compact-tile{min-height:248px;text-decoration:none;padding:26px}
+.compact-tile>span:first-child{font-size:9px;letter-spacing:.09em}
+.compact-tile h2{font-size:clamp(25px,2.3vw,32px);margin:46px 0 24px}
+.compact-tile .connection-map,.compact-tile .marketing-tags{margin-top:auto}
+.compact-tile.dashboard-tile{grid-column:span 4}
+.compact-tile.dashboard-tile h2{margin-bottom:10px}
+.compact-tile .mini-report{height:48px;margin:4px 0 0}
+.approach-tile{min-height:248px}
+@media(hover:hover) and (pointer:fine){.compact-tile:hover{transform:translateY(-4px)}}
+@media(max-width:700px){.bento-page .cards-header{top:20px}.bento-page .cards-stage{padding-top:104px}.bento-intro{padding-bottom:14px}.bento-intro h1{font-size:43px}.bento-page .ticket{height:410px}.compact-tile{grid-column:span 1;min-height:210px;padding:20px 17px}.compact-tile h2{font-size:23px;margin:38px 0 20px}.compact-tile.dashboard-tile{grid-column:1/-1;min-height:210px}.approach-tile{min-height:210px}}
+@media(max-width:370px){.compact-tile{grid-column:1/-1}}

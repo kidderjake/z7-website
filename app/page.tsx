@@ -5,6 +5,7 @@ import './cards.css';
 import './bento.css';
 import './website-card.css';
 import './simplified.css';
+import './balanced-bento.css';
 
 function ProductIcon({ automation = false, className = '' }: { automation?: boolean; className?: string }) {
   return <svg className={className} viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -18,7 +19,7 @@ export default function Home() {
   return <div className="cards-page bento-page" id="top">
     <header className="cards-header"><a href="/" aria-label="Z7 home"><img src="/brand/z7-inline-icon-navy.png" width="54" height="54" alt="Z7"/></a><span className="cards-wordmark">ZONESEVEN</span><a className="enquire-cta" href="/enquire">Enquire</a></header>
     <main className="cards-stage" aria-label="Z7 product offerings">
-      <div className="bento-intro"><h1>Time for liftoff<span>.</span></h1><p>Two ways to move your business forward.</p></div>
+      <div className="bento-intro"><h1>Time for liftoff<span>.</span></h1><p>Websites and AI automation for small business.</p></div>
       <section className="offering offering-audit" aria-labelledby="audit-title">
         <div className="card-slot"><article className="ticket">
           <div className="ticket-upper"><h2 id="audit-title"><span>FREE</span>AI AUTOMATION<br/>AUDIT</h2><ProductIcon automation className="ticket-plane"/></div>
@@ -50,11 +51,26 @@ export default function Home() {
           <p className="details-note">We start with your goals, then shape the pages and features you need.</p>
         </div>
       </section>
+      <a className="bento-tile compact-tile automation-tile" href="/enquire">
+        <span>AI &amp; AUTOMATION</span>
+        <h2>Less busywork.<br/>More possibility.</h2>
+        <div className="connection-map" aria-hidden="true"><span>TOOLS</span><i/><span>Z7</span><i/><span>TIME</span></div>
+      </a>
+      <a className="bento-tile compact-tile marketing-tile" href="/enquire">
+        <span>MARKETING &amp; GROWTH</span>
+        <h2>Get seen.<br/>Make it count.</h2>
+        <div className="marketing-tags" aria-hidden="true"><span>Positioning</span><span>Content</span><span>Campaigns</span></div>
+      </a>
       <section className="bento-tile approach-tile" aria-labelledby="approach-title">
         <span>THE ZONESEVEN APPROACH</span>
         <h2 id="approach-title">Think. Build. Evolve.</h2>
         <p>Strategy, design, and technology working together.</p>
       </section>
+      <a className="bento-tile compact-tile dashboard-tile" href="/dashboard">
+        <span>DASHBOARD DEMO</span>
+        <h2>One operational<br/>view.</h2>
+        <div className="mini-report" aria-hidden="true"><i/><i/><i/><i/><i/><i/><i/></div>
+      </a>
     </main>
     <footer className="cards-footer"><span>© {new Date().getFullYear()} ZoneSeven</span><a href="#top">Back to top <span aria-hidden="true">↑</span></a></footer>
   </div>;
